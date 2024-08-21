@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Huỳnh Quốc Bảo</h1>
+    <script>
+       const mark = {
+        mass: 78,
+        height: 1.69,
+       }
+        const john = {
+        mass: 92,
+        height: 1.95,
+        }
+        const calculateBMI = (mass, height) => (
+            mass / (height * height)
+        )
+        const printResult = (result) => {
+            if(result) {
+                console.log(`Mark's BMI (${calculateBMI(mark.mass, mark.height).toFixed(1)}) is higher than John's (${calculateBMI(john.mass, john.height).toFixed(1)})!`);
+            } else {
+                console.log(`John's BMI (${calculateBMI(john.mass, john.height).toFixed(1)}) is higher than Mark's (${calculateBMI(mark.mass, mark.height).toFixed(1)})!`);
+            }
+        }
+        var markHigherBMI = calculateBMI(mark.mass, mark.height) > calculateBMI(john.mass, john.height);
+        printResult(markHigherBMI);
+        
+        mark.mass = 95;
+        mark.height = 1.88;
+        john.mass = 85;
+        john.height = 1.76;
+        markHigherBMI = calculateBMI(mark.mass, mark.height) > calculateBMI(john.mass, john.height);
+        printResult(markHigherBMI);
+        
+    </script>
+</body>
+</html>
