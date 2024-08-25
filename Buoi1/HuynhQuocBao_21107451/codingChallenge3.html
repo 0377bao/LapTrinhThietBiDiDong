@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const CalculateScore = (scores) => {
+            const sum = scores.reduce((total, index) => {return total + index}, 0);
+            return sum / scores.length;
+        }
+        const findTheWinner = (person1, person2) => {
+            const score1 = CalculateScore(person1);
+            const score2 = CalculateScore(person2);
+            if(score1 < 100 && score2 < 100) {
+                console.log("No one wins!");
+            } else if(score1 >= 100 && score2 >= 100) {
+                if(score1 == score2) console.log("Draw!");
+                else console.log(score1 > score2 ? "Dolphins wins?" : "Koalas wins!");
+            } else {
+                console.log(score1 >= 100 ? "Dolphins wins!" : "Koalas wins!");
+            }
+        }
+        const dolphins1 = [96, 108, 89];
+        const koalas1 = [88, 91, 110];
+        findTheWinner(dolphins1, koalas1);
+        const dolphins2 = [97, 112, 101];
+        const koalas2 = [109, 95, 123];
+        findTheWinner(dolphins2, koalas2);
+        const dolphins3 = [97, 112, 101];
+        const koalas3 = [109, 95, 106];
+        findTheWinner(dolphins3, koalas3);
+        
+    </script>
+</body>
+</html>
