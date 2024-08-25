@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calculateTipBill = (cots) => {
+            return cots >= 50 && cots <= 300 ? cots * 0.15 : cots * 0.2;
+        }
+        const bills = [125, 555, 44];
+        const tips = bills.map(bill => calculateTipBill(bill));
+        const total = bills.map((bill, index) => bill + tips[index]);
+        console.log(total);
+    </script>
+</body>
+</html>
