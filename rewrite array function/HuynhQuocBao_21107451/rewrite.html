@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.MyMap = function(callBack) {
+            var newMap = [];
+            for(let i = 0; i < this.length; i++) {
+                newMap.push(callBack(this[i], i, this));
+            }
+            return newMap;
+        }
+        Array.prototype.MyFilter = function(callBack) {
+            var newMap = [];
+            for(let i = 0; i < this.length; i++) {
+                callBack(this[i], i, this) && newMap.push(this[i]);
+            }
+            return newMap;
+        }
+        Array.prototype.MyFind = function(callBack) {
+            for(let i = 0; i < this.length; i++) {
+                if(callBack(this[i], i, this)) return this[i];
+            }
+            return undefined;
+        }
+        Array.prototype.MySome = function(callBack) {
+            for(let i = 0; i < this.length; i++) {
+                if(callBack(this[i], i, this)) return true;
+            }
+            return false;
+        }
+        Array.prototype.MyEvery = function(callBack) {
+            for(let i = 0; i < this.length; i++) {
+                if(!callBack(this[i], i, this)) return false;
+            }
+            return true;
+        }
+        Array.prototype.MyReduce = function(callBack, total) {
+            let result = total || 0;
+            for(let i = 0; i < this.length; i++) {
+                result = callBack(result, this[i], i, this);
+            }
+            return result;
+        }
+        const a = [1,2,3];
+        const b = a.MyMap((item) => item + 1);
+        console.log("My Map " + b);
+        const c = a.MyFilter(item => item == 1);
+        console.log("My Filter " + c);
+        const d = a.MyFind(item => item == 4);
+        console.log("My Find " + d);
+        const e = a.MySome(item => item == 4);
+        console.log("My Some " + e);
+        const f = a.MyEvery(item => item > 0);
+        console.log("My Every " + f);
+        const g = a.MyReduce((result, item) => result * item, 2);
+        console.log("My Reduce " + g);
+        
+    </script>
+</body>
+</html>
