@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .action {
+            margin-bottom: 10px;
+        }
+        .grouptext {
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        #button {
+            background-color: #222;
+            font-size: 1.5rem;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="action">
+        <button id="button">Again</button>
+    </div>
+    <div class="elements">
+        <div class="grouptext">
+            <label for="message">message: </label>
+            <input class="input" type="text" id="message">
+        </div>
+        <div class="grouptext">
+            <label for="number">number: </label>
+            <input class="input" type="text" id="number">
+        </div>
+        <div class="grouptext">
+            <label for="score">score: </label>
+            <input class="input" type="text" id="score">
+        </div>
+        <div class="grouptext">
+            <label for="guess input">guess input: </label>
+            <input class="input" type="text" id="guess input">
+        </div>
+    </div>
+    <script>
+        const button = document.getElementById('button');
+        const inputs = document.querySelectorAll('.input');
+
+        button.onclick = (e) => {
+            e.target.style.backgroundColor = '#222';
+            e.target.style.fontSize = '1.5rem';
+            inputs.forEach(input => {
+                input.value = '';
+            })
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                button.style.backgroundColor = 'grey';
+                button.style.fontSize = '1.2rem';
+            });
+        });
+    </script>
+</body>
+</html>
