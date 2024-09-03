@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge3</title>
+</head>
+<body>
+    <h1>Challenge 3</h1>
+    <script>
+        const calcBMI = (mass, height) => {
+            console.log(mass / (height * height));
+            console.log(mass);
+            console.log(height);
+            
+                return mass / (height * height);
+            }
+        const mark = {
+            fullName: 'Mark',
+            mass: 78,
+            height: 1.69,
+            calcBMI: function() {
+                this.bmi = this.mass / (this.height * this.height);
+                return this.bmi;
+            }
+        }
+        const john = {
+            fullName: 'John',
+            mass: 92,
+            height: 1.95,
+            calcBMI: function() {
+                this.bmi = this.mass / (this.height * this.height);
+                return this.bmi;
+            }
+        }
+        mark.calcBMI();
+        john.calcBMI();
+        if(john.calcBMI > mark)
+            console.log(`Join's BMI (${john.bmi.toFixed(1)}) is higher than Mark's (${mark.bmi.toFixed(1)})`);
+        else 
+            console.log(`Mark's BMI (${mark.bmi.toFixed(1)}) is higher than John's (${john.bmi.toFixed(1)})`);
+    </script>
+</body>
+</html>
