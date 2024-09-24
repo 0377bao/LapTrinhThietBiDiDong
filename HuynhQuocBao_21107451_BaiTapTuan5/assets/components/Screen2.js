@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function Screen2({navigation}) {
 
-    const [color, setColor] = useState('rgba(197, 241, 251, 1)')
+    const [color, setColor] = useState('vs_blue')
 
     return (
         <View style={{flex: 1}}>
@@ -45,8 +45,8 @@ function Screen2({navigation}) {
                             width: 80,
                             height: 80,
                             marginBottom: 20
-                        }, color === 'rgba(197, 241, 251, 1)' && styles.active
-                    ]} onPress={() => {setColor('rgba(197, 241, 251, 1)')}} />
+                        }, color === 'vs_silver' && styles.active
+                    ]} onPress={() => {setColor('vs_silver')}} />
                     <TouchableOpacity style={[
                         {
                             backgroundColor: 'rgba(243, 13, 13, 1)',
@@ -54,8 +54,8 @@ function Screen2({navigation}) {
                             width: 80,
                             height: 80,
                             marginBottom: 20
-                        }, color === 'rgba(243, 13, 13, 1)' && styles.active
-                    ]} onPress={() => {setColor('rgba(243, 13, 13, 1)')}} />
+                        }, color === 'vs_red' && styles.active
+                    ]} onPress={() => {setColor('vs_red')}} />
                     <TouchableOpacity style={[
                         {
                             backgroundColor: 'rgba(0, 0, 0, 1)',
@@ -63,8 +63,8 @@ function Screen2({navigation}) {
                             width: 80,
                             height: 80,
                             marginBottom: 20
-                        }, color === 'rgba(0, 0, 0, 1)' && styles.active
-                    ]} onPress={() => {setColor('rgba(0, 0, 0, 1)')}} />
+                        }, color === 'vs_black' && styles.active
+                    ]} onPress={() => {setColor('vs_black')}} />
                     <TouchableOpacity style={[
                         {
                             backgroundColor: 'rgba(35, 72, 150, 1)',
@@ -72,8 +72,8 @@ function Screen2({navigation}) {
                             width: 80,
                             height: 80,
                             marginBottom: 20
-                        }, color === 'rgba(35, 72, 150, 1)' && styles.active
-                    ]} onPress={() => {setColor('rgba(35, 72, 150, 1)')}} />
+                        }, color === 'vs_blue' && styles.active
+                    ]} onPress={() => {setColor('vs_blue')}} />
                 </View>
                 <TouchableOpacity style={{
                     marginTop: 50,
@@ -92,7 +92,7 @@ function Screen2({navigation}) {
                         fontSize: 20,
                         fontWeight: 'bold'
                     }} onPress={() => {
-                        navigation.navigate('Detail', {color: color});
+                        navigation.navigate('Home', {imagesColor: color});
                     }}>
                         XONG
                     </Text>

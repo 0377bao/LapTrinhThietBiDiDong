@@ -15,7 +15,6 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Screen1} />
           <Stack.Screen name="ChooseColor" component={Screen2} />
-          <Stack.Screen name="Detail" component={Detail} />
         </Stack.Navigator>
       </NavigationContainer>
   );

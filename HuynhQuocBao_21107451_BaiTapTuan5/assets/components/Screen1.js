@@ -1,12 +1,21 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Screen2 from "./Screen2";
 
-function Screen1 ({ navigation }) {
+function Screen1 ({route, navigation }) {
+
+    const imagesColor = route?.params?.imagesColor || 'vs_blue';
+
+    const imageMap = {
+        'vs_blue': require('../images/vs_blue.png'),
+        'vs_red': require('../images/vs_red.png'),
+        'vs_silver': require('../images/vs_silver.png'),
+        'vs_black': require('../images/vs_black.png'),
+    };
+
     return (
         <View style={styles.container}>
             <View>
                 <View>
-                    <Image source={require('../images/vs_blue.png')} />
+                    <Image source={imageMap[imagesColor]} />
                 </View>
                 <Text style={{
                     fontSize: 17,
